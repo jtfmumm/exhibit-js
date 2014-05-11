@@ -4,6 +4,7 @@ require.config({
         jquery: "lib/jquery-2.1.1", 
         underscore: "lib/underscore", 
         backbone: "lib/backbone",
+        mustache: "lib/mustache",
         jasmine: "lib/jasmine"
     }
 });

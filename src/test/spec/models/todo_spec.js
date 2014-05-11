@@ -1,8 +1,8 @@
 define(['test/tmp/test'], function(colors) {
-  describe('Model::Todo', function () {
+  describe('Test.js', function () {
 
-    describe('model', function () {
-      it('should have default values', function () {
+    describe('colors', function () {
+      it('should have a white value of 1', function () {
         expect(colors.white).toEqual(1);
       });
     });
