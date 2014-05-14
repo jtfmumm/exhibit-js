@@ -6,7 +6,7 @@ define(function(require) {
         it("should exist", function() {
             var photoView = new PhotoView();
             expect(photoView).not.toBeUndefined();
-        })
+        }); 
     })
 
 

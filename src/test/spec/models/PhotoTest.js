@@ -1,6 +1,6 @@
 define(function(require) {
-    var PhotoModel = require("js/models/Photo"); 
-    var ImgURLPrefix = 'static/img/';
+    var PhotoModel = require("app/js/models/Photo"); 
+    var ImgURLPrefix = 'app/static/img/';
 
     beforeEach(function() {
     });
