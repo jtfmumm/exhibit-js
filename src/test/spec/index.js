@@ -1,7 +1,7 @@
 define(function() {
   return {
     specs: [
-      'spec/models/todo_spec'
+      'test/spec/models/PhotoModelTest'
     ]
   };
 });

@@ -31,7 +31,7 @@ require.config({
     });
 
     var specs = [
-      'test/spec/models/todo_spec'
+      'test/spec/models/PhotoModelTest'
     ];
 
     require(['boot'], function () {
