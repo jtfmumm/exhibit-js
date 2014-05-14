@@ -3,8 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "requirejs": "latest"
-  , "connect": "2.7.0"
+    "requirejs": "latest",
+    "connect": "2.7.0",
+    "volo": "latest"
   },
   "devDependencies": {
     "grunt": "latest",
@@ -12,5 +13,10 @@
   },
   "scripts": {
     "grunt": "node_modules/.bin/grunt"
+  },
+  "volo": {
+    "dependencies": {
+      "text": "github:requirejs/text/2.0.12"
+    }
   }
 }
