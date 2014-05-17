@@ -1,11 +1,11 @@
 define(function(require) {
     var Mustache = require("mustache");
-    var Backbone = require("backbone");
-    var photoTemplate = require("text!static/templates/photo-template.html");
+    var PhotoView = require("js/views/PhotoView");
+    var photoExhibitTemplate = require("text!static/templates/photo-exhibit-template.html");
 
-    var PhotoView = Backbone.View.extend({
+    var PhotoExhibitView = Backbone.View.extend({
         initialize: function() {
-            this.template = photoTemplate;
+            this.template = photoExhibitTemplate;
         },
         render: function() {
             var view = this;
@@ -16,5 +16,5 @@ define(function(require) {
         }
     });
 
-    return PhotoView;
+    return PhotoExhibitView;
 })

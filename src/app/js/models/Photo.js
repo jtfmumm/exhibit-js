@@ -1,4 +1,6 @@
-define(['backbone'], function(Backbone) {
+define(function(require) {
+    var Backbone = require('backbone');
+
     var imgURLPrefix = "static/img/";
 
     function makeUidGenerator(seed) {
@@ -11,7 +13,7 @@ define(['backbone'], function(Backbone) {
 
     var photoUid = makeUidGenerator();
 
-    var PhotoModel = Backbone.Model.extend({
+    var Photo = Backbone.Model.extend({
         initialize: function(options) {
             if (options.title == null) this.set("title", photoUid());
             if (options.img) {                  
@@ -21,5 +23,5 @@ define(['backbone'], function(Backbone) {
         }
     });
 
-    return PhotoModel;
+    return Photo;
 });
