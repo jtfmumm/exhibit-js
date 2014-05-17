@@ -23,7 +23,7 @@ require.config({
         "backbone-relational": {
           deps: ['backbone'],
           exports: 'Backbone'
-        }
+        },
         jquery: {
           exports: 'jquery'
         },

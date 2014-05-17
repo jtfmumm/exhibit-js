@@ -1,11 +1,17 @@
 define(function(require) {
     var Backbone = require('backbone');
+    require('backbone-relational');
     var PhotoCollection = require("js/collections/PhotoCollection"); 
 
-    var PhotoExhibit = Backbone.Model.extend({
-        initialize: function(options) {
-            this.photos = new PhotoCollection(); //Need to improve this              
-        }
+    var PhotoExhibit = Backbone.RelationalModel.extend({
+    	relations: [{
+    		type: 'HasMany',
+    		key: 'photos',
+    		relatedModel: 'Photo',
+    		reverseRelation: {
+    			key: 'exhibit'
+    		}
+    	}],
     });
 
     return PhotoExhibit;
