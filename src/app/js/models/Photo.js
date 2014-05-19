@@ -1,19 +1,13 @@
 define(function(require) {
     var Backbone = require('backbone');
+    require('backbone-relational');
+    var makeUidGenerator = require('js/utils/makeUidGenerator');
 
     var imgURLPrefix = "static/img/";
 
-    function makeUidGenerator(seed) {
-        var seed = seed || 0;
-
-        return function() {
-            return ++seed;
-        };
-    }
-
     var photoUid = makeUidGenerator();
 
-    var Photo = Backbone.Model.extend({
+    var Photo = Backbone.RelationalModel.extend({
         initialize: function(options) {
             if (options.title == null) this.set("title", photoUid());
             if (options.img) {                  

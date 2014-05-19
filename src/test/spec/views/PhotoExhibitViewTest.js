@@ -2,6 +2,7 @@ define(function(require) {
     require("jasmine-jquery");
     require("jasmine-fixture");
     var Photo = require("js/models/Photo");
+    var PhotoExhibit = require("js/models/PhotoExhibit");
     var PhotoView = require("js/views/PhotoView");    
     var PhotoExhibitView = require("js/views/PhotoExhibitView");    
 
@@ -11,18 +12,18 @@ define(function(require) {
         $photoHanger = affix("#hanger");
     });
 
-    describe("PhotoViewExhibit", function() {
+    describe("PhotoExhibitView", function() {
         it("should exist", function() {
             var photoExhibitView = new PhotoExhibitView();
             expect(photoExhibitView).not.toBeUndefined();
         }); 
 
-        xit("should show up when rendered", function() {
+        it("should show up when rendered", function() {
             whenIRenderWithAPhoto();
-            expect($photoHanger.find('.photo')).not.toBeUndefined();
+            expect($photoHanger.find('.photo-exhibit')).not.toBeUndefined();
         });
 
-        xit("should display a photo when one is included", function() {
+        it("should display a photo when one is included", function() {
             whenIRenderWithAPhoto();
             expect($photoHanger.find('.img')).not.toBeUndefined();
         });
@@ -30,8 +31,11 @@ define(function(require) {
 
     function whenIRenderWithAPhoto() {
         var photo = new Photo({"img": "01.jpg"});
-        var photoView = new PhotoView({model: photo});
-        $photoHanger.append(photoView.render().el);
+        var photoEx = new PhotoExhibit({photos: [photo]});
+        var photoExhibitView = new PhotoExhibitView({
+            model: photoEx
+        });
+        $photoHanger.append(photoExhibitView.render().el);
     }
 
 

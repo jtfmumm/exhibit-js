@@ -7,6 +7,7 @@ define(function(require) {
         initialize: function() {
             this.template = photoTemplate;
         },
+
         render: function() {
             var view = this;
 

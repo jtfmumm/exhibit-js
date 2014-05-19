@@ -20,11 +20,17 @@ require.config({
     }
 });
 
-require(["js/views/PhotoView", "js/models/Photo"], function (PhotoView, Photo) {
-    var photo = new Photo({"title": "thisPhoto", "img": "01.jpg"});
-    var photoView = new PhotoView({
-        model: photo
-    });
+require(["js/views/PhotoView", "js/views/PhotoExhibitView", "js/models/Photo", "js/models/PhotoExhibit"], 
+        function (PhotoView, PhotoExhibitView, Photo, PhotoExhibit) {
+            var photo1 = new Photo({"title": "01", "img": "01.jpg"});
+            var photo2 = new Photo({"title": "02", "img": "02.jpg"});
+            var photo3 = new Photo({"title": "03", "img": "03.jpg"});
+            var photo4 = new Photo({"title": "04", "img": "04.gif"});
 
-    $('body').append(photoView.render().el);
+            var photoEx = new PhotoExhibit({photos: [photo1, photo2, photo3, photo4]});
+            var photoExhibitView = new PhotoExhibitView({
+                model: photoEx
+            });
+
+            $('body').append(photoExhibitView.render().el);
 });
